@@ -16,7 +16,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "types": ["node", "react", "material-ui"]
+    "types": [
+      "node",
+      "react",
+      "material-ui",
+      "recharts",
+      "date-fns",
+      "jest"
+    ]
   },
   "include": ["src"]
 } 
