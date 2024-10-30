@@ -35,12 +35,29 @@ class RecommendationEngine:
 
     def _analyze_genetic_risks(self, genetic_data: str) -> List[str]:
         # Implement genetic risk analysis
-        return []
+        risks = []
+        if "BRCA1" in genetic_data:
+            risks.append("Increased risk of breast cancer")
+        if "APOE-e4" in genetic_data:
+            risks.append("Increased risk of Alzheimer's disease")
+        return risks
 
     def _analyze_lifestyle(self, lifestyle_data: dict) -> List[str]:
         # Implement lifestyle analysis
-        return []
+        recommendations = []
+        if lifestyle_data.get("smoking"):
+            recommendations.append("Quit smoking to improve lung health")
+        if lifestyle_data.get("exercise") < 150:
+            recommendations.append("Increase physical activity to at least 150 minutes per week")
+        if lifestyle_data.get("diet") == "unhealthy":
+            recommendations.append("Adopt a balanced diet rich in fruits and vegetables")
+        return recommendations
 
     def _analyze_medical_history(self, medical_history: dict) -> List[str]:
         # Implement medical history analysis
-        return []
+        recommendations = []
+        if "hypertension" in medical_history:
+            recommendations.append("Monitor blood pressure regularly and reduce salt intake")
+        if "diabetes" in medical_history:
+            recommendations.append("Maintain blood sugar levels through diet and medication")
+        return recommendations
